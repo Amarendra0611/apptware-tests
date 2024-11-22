@@ -34,8 +34,9 @@ class DataReaderImpl implements DataReader {
     // Placeholder for paginated data fetching logic
     // The candidate will add the actual implementation here
 
+    // calling getPaginatedData method with page size 10000
     Stream<String> dataStream =
-        Stream.empty(); // Temporary, will be replaced by the actual data stream
+            paginationService.getPaginatedData(1, 10000).stream();
     return dataStream.peek(item -> log.info("Fetched Item: {}", item));
   }
 }
